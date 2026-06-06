@@ -1,0 +1,2 @@
+{"event_id":"R-2001","event_type":"review_decision","progress_id":"P-1001","criterion_id":"L2-C1","reviewer_id":"u-reviewer-1","decision":"approved","comment":"Context spec is complete and aligned.","decided_at":"2026-06-04T14:00:00Z"}
+{"event_id":"R-2002","event_type":"review_decision","progress_id":"P-1001","criterion_id":"L2-C2","reviewer_id":"u-reviewer-1","decision":"needs_update","comment":"Add explicit acceptance criteria mapping.","decided_at":"2026-06-04T14:10:00Z"}

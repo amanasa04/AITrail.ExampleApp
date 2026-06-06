@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://paycor.local/schemas/progress.schema.json",
+  "type": "object",
+  "required": [
+    "progress_id",
+    "user_id",
+    "user_name",
+    "team",
+    "rubric_id",
+    "rubric_version",
+    "current_level_id",
+    "target_level_id",
+    "readiness_state",
+    "criterion_status",
+    "evidence"
+  ],
+  "properties": {
+    "progress_id": { "type": "string", "minLength": 1 },
+    "user_id": { "type": "string", "minLength": 1 },
+    "user_name": { "type": "string", "minLength": 1 },
+    "team": { "type": "string", "minLength": 1 },
+    "rubric_id": { "type": "string", "minLength": 1 },
+    "rubric_version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+    "current_level_id": { "type": "string", "minLength": 1 },
+    "target_level_id": { "type": "string", "minLength": 1 },
+    "readiness_state": {
+      "type": "string",
+      "enum": ["not_started", "in_progress", "review_ready", "promoted"]
+    },
+    "criterion_status": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "enum": ["not_started", "in_review", "approved", "rejected", "needs_update"]
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "$ref": "./evidence.schema.json"
+      }
+    }
+  },
+  "additionalProperties": false
+}

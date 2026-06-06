@@ -1,0 +1,2 @@
+# AI-trail
+AITRAIL.EXAMPLEAPP

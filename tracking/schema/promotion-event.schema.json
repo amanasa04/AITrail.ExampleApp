@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://paycor.local/schemas/promotion-event.schema.json",
+  "type": "object",
+  "required": [
+    "event_id",
+    "event_type",
+    "progress_id",
+    "from_level_id",
+    "to_level_id",
+    "approver_id",
+    "reason",
+    "decided_at"
+  ],
+  "properties": {
+    "event_id": { "type": "string", "minLength": 1 },
+    "event_type": { "type": "string", "const": "promotion_decision" },
+    "progress_id": { "type": "string", "minLength": 1 },
+    "from_level_id": { "type": "string", "minLength": 1 },
+    "to_level_id": { "type": "string", "minLength": 1 },
+    "approver_id": { "type": "string", "minLength": 1 },
+    "reason": { "type": "string", "minLength": 1 },
+    "rollback": { "type": "boolean", "default": false },
+    "decided_at": { "type": "string", "format": "date-time" }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://paycor.local/schemas/evidence.schema.json",
+  "type": "object",
+  "required": [
+    "evidence_id",
+    "criterion_id",
+    "type",
+    "uri_or_text",
+    "submitted_by",
+    "submitted_at",
+    "status"
+  ],
+  "properties": {
+    "evidence_id": { "type": "string", "minLength": 1 },
+    "criterion_id": { "type": "string", "minLength": 1 },
+    "type": { "type": "string", "enum": ["document_link", "review_note", "checklist"] },
+    "uri_or_text": { "type": "string", "minLength": 1 },
+    "submitted_by": { "type": "string", "minLength": 1 },
+    "submitted_at": { "type": "string", "format": "date-time" },
+    "status": {
+      "type": "string",
+      "enum": ["in_review", "approved", "rejected", "needs_update"]
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,121 @@
+{
+  "rubric_id": "ai-trail",
+  "name": "AI Trail Progression Rubric",
+  "version": "1.0.0",
+  "effective_from": "2026-06-04",
+  "status": "active",
+  "levels": [
+    {
+      "level_id": "L1",
+      "name": "Environment and Instruction Foundations",
+      "sequence": 1,
+      "criteria": [
+        {
+          "criterion_id": "L1-C1",
+          "description": "Base instructions file present and reviewed",
+          "required": true,
+          "evidence_type": "document_link",
+          "gate_weight": 1
+        },
+        {
+          "criterion_id": "L1-C2",
+          "description": "Workspace setup rationale documented",
+          "required": true,
+          "evidence_type": "document_link",
+          "gate_weight": 1
+        },
+        {
+          "criterion_id": "L1-C3",
+          "description": "Toolkit configured and verified",
+          "required": true,
+          "evidence_type": "checklist",
+          "gate_weight": 1
+        }
+      ]
+    },
+    {
+      "level_id": "L2",
+      "name": "Spec-Driven Planning Practitioner",
+      "sequence": 2,
+      "criteria": [
+        {
+          "criterion_id": "L2-C1",
+          "description": "Product context spec created or refreshed",
+          "required": true,
+          "evidence_type": "document_link",
+          "gate_weight": 1
+        },
+        {
+          "criterion_id": "L2-C2",
+          "description": "Feature spec approved",
+          "required": true,
+          "evidence_type": "document_link",
+          "gate_weight": 1
+        },
+        {
+          "criterion_id": "L2-C3",
+          "description": "Technical spec reviewed",
+          "required": true,
+          "evidence_type": "review_note",
+          "gate_weight": 1
+        }
+      ]
+    },
+    {
+      "level_id": "L3",
+      "name": "Controlled Agent Execution",
+      "sequence": 3,
+      "criteria": [
+        {
+          "criterion_id": "L3-C1",
+          "description": "Task list created with granular sequencing",
+          "required": true,
+          "evidence_type": "document_link",
+          "gate_weight": 1
+        },
+        {
+          "criterion_id": "L3-C2",
+          "description": "Execution tracked with checkpoints",
+          "required": true,
+          "evidence_type": "review_note",
+          "gate_weight": 1
+        },
+        {
+          "criterion_id": "L3-C3",
+          "description": "AI attribution evidence captured",
+          "required": true,
+          "evidence_type": "document_link",
+          "gate_weight": 1
+        }
+      ]
+    },
+    {
+      "level_id": "L4",
+      "name": "Quality, Security, and Governance Operator",
+      "sequence": 4,
+      "criteria": [
+        {
+          "criterion_id": "L4-C1",
+          "description": "Iterative validation checks run and recorded",
+          "required": true,
+          "evidence_type": "checklist",
+          "gate_weight": 1
+        },
+        {
+          "criterion_id": "L4-C2",
+          "description": "Dependency and security review completed",
+          "required": true,
+          "evidence_type": "review_note",
+          "gate_weight": 1
+        },
+        {
+          "criterion_id": "L4-C3",
+          "description": "Final acceptance mapping documented",
+          "required": true,
+          "evidence_type": "document_link",
+          "gate_weight": 1
+        }
+      ]
+    }
+  ]
+}

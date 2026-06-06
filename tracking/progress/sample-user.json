@@ -1,0 +1,36 @@
+{
+  "progress_id": "P-1001",
+  "user_id": "u-amanasa",
+  "user_name": "Manasa",
+  "team": "EnterpriseArchitecture",
+  "rubric_id": "ai-trail",
+  "rubric_version": "1.0.0",
+  "current_level_id": "L1",
+  "target_level_id": "L2",
+  "readiness_state": "in_progress",
+  "criterion_status": {
+    "L2-C1": "approved",
+    "L2-C2": "in_review",
+    "L2-C3": "not_started"
+  },
+  "evidence": [
+    {
+      "evidence_id": "E-1001",
+      "criterion_id": "L2-C1",
+      "type": "document_link",
+      "uri_or_text": "AITrail.ExampleApp/.agent-os/product/analyze-product.md",
+      "submitted_by": "u-amanasa",
+      "submitted_at": "2026-06-04T13:30:00Z",
+      "status": "approved"
+    },
+    {
+      "evidence_id": "E-1002",
+      "criterion_id": "L2-C2",
+      "type": "document_link",
+      "uri_or_text": "AITrail.ExampleApp/.agent-os/specs/2026-06-04-ai-trail-progress-tracking/feature-spec.md",
+      "submitted_by": "u-amanasa",
+      "submitted_at": "2026-06-04T13:45:00Z",
+      "status": "in_review"
+    }
+  ]
+}
