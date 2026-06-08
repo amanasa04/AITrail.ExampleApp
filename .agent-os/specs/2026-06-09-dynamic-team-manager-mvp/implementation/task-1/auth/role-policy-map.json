@@ -1,0 +1,125 @@
+{
+  "version": "1.0.0",
+  "authentication": {
+    "provider": "Entra ID / Easy Auth",
+    "required_claims": [
+      "oid",
+      "name",
+      "preferred_username"
+    ],
+    "role_claim_candidates": [
+      "roles",
+      "groups",
+      "wids"
+    ]
+  },
+  "application_roles": [
+    {
+      "name": "Employee",
+      "description": "Read-only access to permitted team/assignment views.",
+      "allowed_policies": [
+        "Teams.Read",
+        "Memberships.ReadOwn",
+        "Roster.Read"
+      ]
+    },
+    {
+      "name": "TeamEditor",
+      "description": "Create and update teams and memberships within delegated scope.",
+      "allowed_policies": [
+        "Teams.Read",
+        "Teams.Write",
+        "Memberships.Read",
+        "Memberships.Write",
+        "Roster.Read"
+      ]
+    },
+    {
+      "name": "HRAnalyst",
+      "description": "Cross-team read, correction, reporting, and export access.",
+      "allowed_policies": [
+        "Teams.Read",
+        "Teams.Write",
+        "Memberships.Read",
+        "Memberships.Write",
+        "Search.Read",
+        "Reports.Read",
+        "Export.Memberships"
+      ]
+    },
+    {
+      "name": "Admin",
+      "description": "Full administrative control including archive and governance operations.",
+      "allowed_policies": [
+        "Teams.Admin",
+        "Memberships.Admin",
+        "Search.Read",
+        "Reports.Read",
+        "Export.Memberships",
+        "Audit.Read"
+      ]
+    }
+  ],
+  "policy_rules": [
+    {
+      "name": "Teams.Read",
+      "http_methods": ["GET"],
+      "resource_patterns": ["/api/v1/teams", "/api/v1/teams/*"]
+    },
+    {
+      "name": "Teams.Write",
+      "http_methods": ["POST", "PATCH"],
+      "resource_patterns": ["/api/v1/teams", "/api/v1/teams/*"]
+    },
+    {
+      "name": "Teams.Admin",
+      "http_methods": ["DELETE"],
+      "resource_patterns": ["/api/v1/teams/*"]
+    },
+    {
+      "name": "Memberships.Read",
+      "http_methods": ["GET"],
+      "resource_patterns": ["/api/v1/teams/*/memberships", "/api/v1/memberships/*"]
+    },
+    {
+      "name": "Memberships.ReadOwn",
+      "http_methods": ["GET"],
+      "resource_patterns": ["/api/v1/teams/*/memberships"]
+    },
+    {
+      "name": "Memberships.Write",
+      "http_methods": ["POST", "PATCH", "DELETE"],
+      "resource_patterns": ["/api/v1/teams/*/memberships", "/api/v1/memberships/*"]
+    },
+    {
+      "name": "Memberships.Admin",
+      "http_methods": ["POST", "PATCH", "DELETE"],
+      "resource_patterns": ["/api/v1/teams/*/memberships", "/api/v1/memberships/*"]
+    },
+    {
+      "name": "Search.Read",
+      "http_methods": ["GET"],
+      "resource_patterns": ["/api/v1/search/memberships"]
+    },
+    {
+      "name": "Reports.Read",
+      "http_methods": ["GET"],
+      "resource_patterns": ["/api/v1/reports/*"]
+    },
+    {
+      "name": "Export.Memberships",
+      "http_methods": ["GET"],
+      "resource_patterns": ["/api/v1/exports/memberships.csv"]
+    },
+    {
+      "name": "Audit.Read",
+      "http_methods": ["GET"],
+      "resource_patterns": ["/api/v1/audit/*"]
+    },
+    {
+      "name": "Roster.Read",
+      "http_methods": ["GET"],
+      "resource_patterns": ["/api/v1/teams/*/memberships"]
+    }
+  ]
+}
