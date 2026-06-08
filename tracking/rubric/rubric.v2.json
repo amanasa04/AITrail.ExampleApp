@@ -1,9 +1,10 @@
 {
   "rubric_id": "ai-trail",
   "name": "AI Trail Progression Rubric",
-  "version": "1.0.0",
-  "effective_from": "2026-06-04",
-  "status": "superseded",
+  "version": "2.0.0",
+  "effective_from": "2026-06-08",
+  "status": "active",
+  "supersedes": "1.0.0",
   "levels": [
     {
       "level_id": "L1",
@@ -12,24 +13,31 @@
       "criteria": [
         {
           "criterion_id": "L1-C1",
-          "description": "Base instructions file present and reviewed",
+          "description": "copilot-instructions.md present and reviewed",
           "required": true,
           "evidence_type": "document_link",
           "gate_weight": 1
         },
         {
           "criterion_id": "L1-C2",
-          "description": "Workspace setup rationale documented",
+          "description": "Workspace setup decision documented (repo vs multi-repo + rationale)",
           "required": true,
           "evidence_type": "document_link",
           "gate_weight": 1
         },
         {
           "criterion_id": "L1-C3",
-          "description": "Toolkit configured and verified",
+          "description": "Proof of toolkit initialization in repo history or setup notes",
           "required": true,
           "evidence_type": "checklist",
           "gate_weight": 1
+        },
+        {
+          "criterion_id": "L1-C4",
+          "description": "Conditional instruction files (if applicable) created and referenced",
+          "required": false,
+          "evidence_type": "document_link",
+          "gate_weight": 0
         }
       ]
     },
@@ -40,21 +48,28 @@
       "criteria": [
         {
           "criterion_id": "L2-C1",
-          "description": "Product context spec created or refreshed",
+          "description": "Product/codebase spec artifacts exist (e.g. under .agent-os/)",
           "required": true,
           "evidence_type": "document_link",
           "gate_weight": 1
         },
         {
           "criterion_id": "L2-C2",
-          "description": "Feature spec approved",
+          "description": "Feature specification artifacts exist for in-flight work",
           "required": true,
           "evidence_type": "document_link",
           "gate_weight": 1
         },
         {
           "criterion_id": "L2-C3",
-          "description": "Technical spec reviewed",
+          "description": "Technical implementation approach documented and reviewed",
+          "required": true,
+          "evidence_type": "review_note",
+          "gate_weight": 1
+        },
+        {
+          "criterion_id": "L2-C4",
+          "description": "Spec revisions recorded after human review feedback",
           "required": true,
           "evidence_type": "review_note",
           "gate_weight": 1
@@ -68,21 +83,28 @@
       "criteria": [
         {
           "criterion_id": "L3-C1",
-          "description": "Task list created with granular sequencing",
+          "description": "Task plan file(s) with progress updates and issue notes",
           "required": true,
           "evidence_type": "document_link",
           "gate_weight": 1
         },
         {
           "criterion_id": "L3-C2",
-          "description": "Execution tracked with checkpoints",
+          "description": "Execution logs showing iterative completion and review checkpoints",
           "required": true,
           "evidence_type": "review_note",
           "gate_weight": 1
         },
         {
           "criterion_id": "L3-C3",
-          "description": "AI attribution evidence captured",
+          "description": "AI attribution/tagging evidence where applicable",
+          "required": true,
+          "evidence_type": "document_link",
+          "gate_weight": 1
+        },
+        {
+          "criterion_id": "L3-C4",
+          "description": "Commits reflecting small-batch implementation and recoverability",
           "required": true,
           "evidence_type": "document_link",
           "gate_weight": 1
@@ -96,23 +118,30 @@
       "criteria": [
         {
           "criterion_id": "L4-C1",
-          "description": "Iterative validation checks run and recorded",
+          "description": "Validation proof: successful build/test checkpoints and acceptance mapping",
           "required": true,
           "evidence_type": "checklist",
           "gate_weight": 1
         },
         {
           "criterion_id": "L4-C2",
-          "description": "Dependency and security review completed",
+          "description": "Security review notes for dependency additions and sensitive code paths",
           "required": true,
           "evidence_type": "review_note",
           "gate_weight": 1
         },
         {
           "criterion_id": "L4-C3",
-          "description": "Final acceptance mapping documented",
+          "description": "Evidence of code review feedback cycles and refactoring outcomes",
           "required": true,
           "evidence_type": "document_link",
+          "gate_weight": 1
+        },
+        {
+          "criterion_id": "L4-C4",
+          "description": "Demonstrated adherence to policy constraints (no secrets/PII in prompts, etc.)",
+          "required": true,
+          "evidence_type": "checklist",
           "gate_weight": 1
         }
       ]

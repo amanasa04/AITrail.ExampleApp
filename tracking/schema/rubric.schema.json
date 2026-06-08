@@ -16,7 +16,8 @@
     "version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
     "effective_from": { "type": "string", "format": "date" },
     "effective_to": { "type": ["string", "null"], "format": "date" },
-    "status": { "type": "string", "enum": ["draft", "active", "retired"] },
+    "status": { "type": "string", "enum": ["draft", "active", "retired", "superseded"] },
+    "supersedes": { "type": "string" },
     "levels": {
       "type": "array",
       "minItems": 1,
@@ -47,7 +48,7 @@
                   "type": "string",
                   "enum": ["document_link", "review_note", "checklist"]
                 },
-                "gate_weight": { "type": "integer", "minimum": 1 }
+                "gate_weight": { "type": "integer", "minimum": 0 }
               },
               "additionalProperties": false
             }
@@ -59,3 +60,4 @@
   },
   "additionalProperties": false
 }
+
