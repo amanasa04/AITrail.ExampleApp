@@ -1,0 +1,13 @@
+{
+  "capturedAtUtc": "2026-06-09T18:00:00Z",
+  "metrics": {
+    "searchP95Seconds": 1.82,
+    "csvExport10kSeconds": 24.3,
+    "firstMeaningfulPageLoadSeconds": 2.4
+  },
+  "targets": {
+    "searchP95SecondsMax": 2.0,
+    "csvExport10kSecondsMax": 30.0,
+    "firstMeaningfulPageLoadSecondsMax": 3.0
+  }
+}
